@@ -1,0 +1,12 @@
+<form action="" method="get">
+    <img class="logo" src="{{logo}}" alt="logo">
+    <caption [ngClass]="{
+        first: textColor == true,
+        second: textColor == false
+    }">{{title}}</caption>
+
+    <input type="text" placeholder="Enter your login"><br>
+    <input type="password" placeholder="Enter your pass"><br>
+
+    <button (click)="textColor = !textColor">Отправить</button>
+</form>

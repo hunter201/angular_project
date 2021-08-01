@@ -1,0 +1,34 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 30rem;
+    border: 0.2rem solid blue;
+
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(180deg, #c5dde8, #eecfba);
+    img.logo {
+        transform: scale(0.45);
+    }
+    caption {
+        &.first {
+            font-style: italic;
+        }
+        &.second {
+            font-style: normal;
+        }
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    input {
+        outline: none;
+
+        outline: none;
+        &::placeholder {
+            color: #000;
+        }
+    }
+}

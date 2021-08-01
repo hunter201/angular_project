@@ -1,0 +1,41 @@
+<nav class="navbar">
+    <div class="navbar_menu">
+        <a href="/"><img src=".\assets\images\php-logo.svg" alt="PHP" width="48px" height="24px"
+                class="navbar_logo"></a>
+        <ul *ngFor="let item of navList">
+            <li><a href="#" (mouseleave)="toggle($event)" (mouseenter)="toggle($event)"
+                    [ngClass]="{hover: isMouseUp}">{{item}}</a></li>
+
+        </ul>
+    </div>
+
+    <input class="navbar_search" type="text" name="search" placeholder="Search" [(ngModel)]="search">
+    
+</nav>
+
+<form action="#" class="login form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login_input">
+        <label for="email">Enter your Email: </label>
+        <span class="helper-text red-text" *ngIf="form.get('email').invalid && form.get('email').touched">
+            Error
+            <span *ngIf="form.get('email').errors['required'] ">Email field dont must be empty!</span>
+            <span *ngIf="form.get('email').errors['email'] ">Enter correct email!</span>
+        </span>
+        <input formControlName="email" name="email" type="text" class="valid" required [ngClass]="{invalid: form.get('email').invalid && form.get('email').touched}">
+        
+    </div>
+    <div class="pass_input">
+        <label for="pass">Enter your password: </label>
+        <span class="helper-text red-text" *ngIf="form.get('pass').invalid && form.get('pass').touched">
+            Error
+            <span *ngIf="form.get('pass').errors['required'] ">Password field dont must be empty!</span>
+            <span *ngIf="form.get('pass').errors['minlength'] && form.get('pass').errors['minlength']['requiredLength'] ">Password must be more than {{form.get('pass').errors['minlength']['requiredLength']}} characters</span>
+        </span>
+        <input formControlName="pass" name="pass" type="password" class="valid" required [ngClass]="{invalid: form.get('pass').invalid && form.get('pass').touched}">
+    </div>
+
+    <button mat-raised-button color='primary' type="submit" class="btn_login" [disabled]='form.invalid'>Login</button>
+</form>
+
+
+  

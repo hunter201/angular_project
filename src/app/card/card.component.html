@@ -1,0 +1,32 @@
+<article class="article" cardHover>
+    <div class="title">
+        <h2>{{item.name}}</h2>
+    </div>
+
+    <div class="input-data">
+        <label [(ngModel)]="searchStr" for="name">{{searchStr}}</label> <input type="text" name="name" id="name"><br>
+        <label for="age">Возраст</label> <input [(ngModel)]="age" type="number" name="age" id="age"><br>
+        <label for="distance">Пробег</label> <input [(ngModel)]="distance" type="number" name="distance"
+            id="distance"><br>
+        <button (click)='addClass()' type="button" class="btn btn-success" name="action">Отправить
+
+        </button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cars">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.distance}}</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
