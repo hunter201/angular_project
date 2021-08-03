@@ -1,5 +1,7 @@
 nav.navbar {
-    // position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,11 +60,13 @@ nav.navbar {
 }
 
 form.form {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     margin: 2rem auto;
+    margin-top: 6.2rem;
     max-width: max-content;
     border: 1px solid #000;
     border-radius: 0.5rem;
